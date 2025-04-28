@@ -7,16 +7,17 @@ class Enemy:
         self.position = [random.randint(1, 5), random.randint(1, 5)]  
 
     def move(self, player_position):
-        if self.position[0] < player_position[0]:
-            self.position[0] += 1
-        elif self.position[0] > player_position[0]:
-            self.position[0] -= 1
+        for _ in range(2):
+            if self.position[0] < player_position[0]:
+                self.position[0] += 1
+            elif self.position[0] > player_position[0]:
+                self.position[0] -= 1
 
         if self.position[1] < player_position[1]:
             self.position[1] += 1
         elif self.position[1] > player_position[1]:
             self.position[1] -= 1
-
+ 
         print("Enemy moved to " + str(self.position))
 
     def attack(self, player):
